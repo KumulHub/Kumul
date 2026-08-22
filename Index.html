@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kumul Business Hub PNG</title>
+
+    <meta
+        name="description"
+        content="Kumul Business Hub PNG - Connecting businesses, customers and opportunities across Papua New Guinea."
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container nav">
+
+            <a href="#home" class="logo">
+                <span>🦅</span>
+                Kumul Business Hub
+            </a>
+
+            <nav id="mainNav">
+                <a href="#home">Home</a>
+                <a href="#directory">Business Directory</a>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </nav>
+
+            <button
+                class="menu-btn"
+                type="button"
+                onclick="toggleMenu()"
+                aria-label="Open navigation menu"
+            >
+                ☰
+            </button>
+
+        </div>
+    </header>
+
+
+    <!-- HERO -->
+    <main>
+
+        <section id="home" class="hero">
+
+            <div class="container hero-content">
+
+                <div class="hero-text">
+
+                    <p class="tagline">
+                        🇵🇬 PNG'S DIGITAL BUSINESS HUB
+                    </p>
+
+                    <h1>
+                        Connect Your Business
+                        <span>With More Opportunities.</span>
+                    </h1>
+
+                    <p>
+                        Kumul Business Hub PNG helps businesses,
+                        entrepreneurs and organizations become more
+                        visible, accessible and competitive in the
+                        digital economy.
+                    </p>
+
+                    <div class="hero-buttons">
+
+                        <a href="#directory" class="btn primary">
+                            Explore Businesses
+                        </a>
+
+                        <a href="#contact" class="btn secondary">
+                            List Your Business
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURES -->
+        <section id="services" class="features">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <p>WHAT WE DO</p>
+
+                    <h2>
+                        Everything Your Business Needs
+                    </h2>
+
+                </div>
+
+
+                <div class="feature-grid">
+
+                    <article class="feature-card">
+
+                        <div class="icon">📋</div>
+
+                        <h3>
+                            Business Directory
+                        </h3>
+
+                        <p>
+                            Discover businesses, products and
+                            services across Papua New Guinea.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="icon">📢</div>
+
+                        <h3>
+                            Advertising
+                        </h3>
+
+                        <p>
+                            Promote your business and reach new
+                            customers through digital advertising.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="icon">📈</div>
+
+                        <h3>
+                            Business Growth
+                        </h3>
+
+                        <p>
+                            Access resources and opportunities
+                            designed to help businesses grow.
+                        </p>
+
+                    </article>
+
+
+                    <article class="feature-card">
+
+                        <div class="icon">🌐</div>
+
+                        <h3>
+                            Digital Visibility
+                        </h3>
+
+                        <p>
+                            Build your online presence and make
+                            your business easier to find.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- BUSINESS DIRECTORY -->
+        <section id="directory" class="directory">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <p>DISCOVER</p>
+
+                    <h2>
+                        Business Directory
+                    </h2>
+
+                    <span>
+                        Find businesses and services around PNG.
+                    </span>
+
+                </div>
+
+
+                <div class="search-box">
+
+                    <input
+                        type="search"
+                        id="searchInput"
+                        placeholder="Search businesses..."
+                        aria-label="Search businesses"
+                    >
+
+                    <button
+                        type="button"
+                        onclick="searchBusinesses()"
+                    >
+                        Search
+                    </button>
+
+                </div>
+
+
+                <div
+                    class="business-grid"
+                    id="businessList"
+                >
+
+                    <article class="business-card">
+
+                        <h3>
+                            Ari Catering
+                        </h3>
+
+                        <p>
+                            🍴 Catering & Food Services
+                        </p>
+
+                        <p>
+                            📍 Port Moresby
+                        </p>
+
+                        <button type="button">
+                            View Business
+                        </button>
+
+                    </article>
+
+
+                    <article class="business-card">
+
+                        <h3>
+                            Lynn Hair Beauty
+                        </h3>
+
+                        <p>
+                            💇 Beauty & Hair Services
+                        </p>
+
+                        <p>
+                            📍 Port Moresby
+                        </p>
+
+                        <button type="button">
+                            View Business
+                        </button>
+
+                    </article>
+
+
+                    <article class="business-card">
+
+                        <h3>
+                            Mars Media Agency
+                        </h3>
+
+                        <p>
+                            🎥 Media & Digital Services
+                        </p>
+
+                        <p>
+                            📍 Papua New Guinea
+                        </p>
+
+                        <button type="button">
+                            View Business
+                        </button>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+        <section id="about" class="about">
+
+            <div class="container about-content">
+
+                <div>
+
+                    <p class="tagline">
+                        ABOUT KUMUL BUSINESS HUB
+                    </p>
+
+                    <h2>
+                        Building a Stronger
+                        Digital Business Community.
+                    </h2>
+
+                </div>
+
+
+                <div>
+
+                    <p>
+                        Kumul Business Hub PNG is a digital platform
+                        created to bring businesses, entrepreneurs,
+                        customers and opportunities together.
+                    </p>
+
+                    <p>
+                        Our goal is to make it easier for Papua New
+                        Guinean businesses to showcase their products
+                        and services, connect with customers and
+                        participate in the growing digital economy.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CALL TO ACTION -->
+        <section class="cta">
+
+            <div class="container">
+
+                <h2>
+                    Ready to Grow Your Business?
+                </h2>
+
+                <p>
+                    Put your business in front of more customers.
+                </p>
+
+                <a href="#contact" class="btn primary">
+                    Join Kumul Business Hub
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+        <section id="contact" class="contact">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <p>
+                        GET STARTED
+                    </p>
+
+                    <h2>
+                        List Your Business
+                    </h2>
+
+                </div>
+
+
+                <form id="businessForm">
+
+                    <input
+                        type="text"
+                        name="businessName"
+                        placeholder="Business Name"
+                        required
+                    >
+
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Email Address"
+                        required
+                    >
+
+                    <input
+                        type="tel"
+                        name="phone"
+                        placeholder="Phone Number"
+                    >
+
+                    <textarea
+                        name="description"
+                        placeholder="Tell us about your business..."
+                        rows="5"
+                    ></textarea>
+
+                    <button
+                        type="submit"
+                        class="btn primary"
+                    >
+                        Submit Business
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="container">
+
+            <h3>
+                🦅 Kumul Business Hub PNG
+            </h3>
+
+            <p>
+                Connecting Businesses. Creating Opportunities.
+            </p>
+
+
+            <div class="footer-links">
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#directory">
+                    Directory
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <p class="copyright">
+                © 2026 Kumul Business Hub PNG.
+                All rights reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
