@@ -1,214 +1,190 @@
 
 /* =========================================================
    KUMUL BUSINESS HUB PNG
-   Main Website JavaScript
+   WEBSITE FUNCTIONALITY
+   Version 2.1
    ========================================================= */
 
-document.addEventListener("DOMContentLoaded", function () {
 
-    /* -----------------------------------------------------
-       1. MOBILE NAVIGATION
-    ----------------------------------------------------- */
+/* 1. MOBILE NAVIGATION */
 
-    const menuButton = document.querySelector(".menu-btn");
-    const mainNav = document.querySelector("#mainNav");
+const menuButton = document.querySelector(".menu-btn");
+const mainNav = document.querySelector("#mainNav");
 
-    if (menuButton && mainNav) {
+if (menuButton && mainNav) {
 
-        menuButton.addEventListener("click", function () {
+    menuButton.addEventListener("click", function () {
 
-            const isOpen = mainNav.classList.toggle("active");
+        const isOpen = mainNav.classList.toggle("active");
 
-            menuButton.setAttribute("aria-expanded", isOpen);
-            menuButton.setAttribute(
-                "aria-label",
-                isOpen ? "Close navigation menu" : "Open navigation menu"
-            );
-
-            menuButton.textContent = isOpen ? "✕" : "☰";
-
-        });
-
-        // Close the menu after selecting a navigation link.
-        mainNav.querySelectorAll("a").forEach(function (link) {
-
-            link.addEventListener("click", function () {
-
-                mainNav.classList.remove("active");
-
-                menuButton.setAttribute("aria-expanded", "false");
-                menuButton.setAttribute(
-                    "aria-label",
-                    "Open navigation menu"
-                );
-
-                menuButton.textContent = "☰";
-
-            });
-
-        });
-
-    }
-
-
-    /* -----------------------------------------------------
-       2. BUSINESS DIRECTORY SEARCH
-    ----------------------------------------------------- */
-
-    const searchInput = document.querySelector("#searchInput");
-    const businessList = document.querySelector("#businessList");
-    const searchButton = document.querySelector(".search-box button");
-
-    function searchBusinesses() {
-
-        if (!searchInput || !businessList) {
-            return;
-        }
-
-        const searchTerm = searchInput.value
-            .toLowerCase()
-            .trim();
-
-        const businessCards = businessList.querySelectorAll(
-            ".business-card"
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+        menuButton.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation menu" : "Open navigation menu"
         );
 
-        let resultsFound = 0;
+        menuButton.textContent = isOpen ? "×" : "☰";
 
-        businessCards.forEach(function (card) {
+    });
 
-            const businessDetails = card.textContent.toLowerCase();
+    // Close menu after selecting a navigation link
 
-            const matches = businessDetails.includes(searchTerm);
+    mainNav.querySelectorAll("a").forEach(function (link) {
 
-            card.style.display = matches ? "" : "none";
+        link.addEventListener("click", function () {
 
-            if (matches) {
-                resultsFound++;
-            }
+            mainNav.classList.remove("active");
 
-        });
+            menuButton.setAttribute("aria-expanded", "false");
+            menuButton.setAttribute("aria-label", "Open navigation menu");
 
-        // Display a message when no businesses match.
-        let noResults = businessList.querySelector(".no-results");
-
-        if (resultsFound === 0) {
-
-            if (!noResults) {
-
-                noResults = document.createElement("p");
-
-                noResults.className = "no-results";
-
-                noResults.textContent =
-                    "No businesses found. Please try another search.";
-
-                businessList.appendChild(noResults);
-
-            }
-
-        } else if (noResults) {
-
-            noResults.remove();
-
-        }
-
-    }
-
-    // Search automatically while typing.
-    if (searchInput) {
-
-        searchInput.addEventListener("input", searchBusinesses);
-
-    }
-
-    // Search when the Search button is tapped.
-    if (searchButton) {
-
-        searchButton.addEventListener("click", searchBusinesses);
-
-    }
-
-
-    /* -----------------------------------------------------
-       3. BUSINESS REGISTRATION FORM
-    ----------------------------------------------------- */
-
-    const businessForm = document.querySelector("#businessForm");
-
-    if (businessForm) {
-
-        businessForm.addEventListener("submit", function (event) {
-
-            event.preventDefault();
-
-            const formData = new FormData(businessForm);
-
-            const businessName = formData.get("businessName")
-                ?.toString()
-                .trim();
-
-            const email = formData.get("email")
-                ?.toString()
-                .trim();
-
-            if (!businessName || !email) {
-
-                alert("Please enter your business name and email address.");
-
-                return;
-
-            }
-
-            alert(
-                "Thank you for submitting " +
-                businessName +
-                ". This is a demonstration form. Your details have not yet been sent or saved."
-            );
-
-            businessForm.reset();
-
-        });
-
-    }
-
-
-    /* -----------------------------------------------------
-       4. SMOOTH PAGE NAVIGATION
-    ----------------------------------------------------- */
-
-    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
-
-        link.addEventListener("click", function (event) {
-
-            const targetId = this.getAttribute("href");
-
-            if (!targetId || targetId === "#") {
-                return;
-            }
-
-            const target = document.querySelector(targetId);
-
-            if (target) {
-
-                event.preventDefault();
-
-                target.scrollIntoView({
-                    behavior: "smooth",
-                    block: "start"
-                });
-
-            }
+            menuButton.textContent = "☰";
 
         });
 
     });
 
+}
 
-    /* -----------------------------------------------------
-       5. WEBSITE INITIALIZATION
-    ----------------------------------------------------- */
 
-    console.log("Kumul Business Hub PNG website initialized.");
+/* 2. BUSINESS DIRECTORY SEARCH AND CATEGORY FILTER */
 
-});
+const searchInput = document.querySelector("#searchInput");
+const categoryFilter = document.querySelector("#categoryFilter");
+const businessList = document.querySelector("#businessList");
+const searchButton = document.querySelector(".search-box button");
+
+
+function filterBusinesses() {
+
+    if (!businessList) {
+        return;
+    }
+
+    const searchTerm = searchInput
+        ? searchInput.value.toLowerCase().trim()
+        : "";
+
+    const selectedCategory = categoryFilter
+        ? categoryFilter.value
+        : "all";
+
+    const businessCards = businessList.querySelectorAll(".business-card");
+
+    let resultsFound = 0;
+
+    businessCards.forEach(function (card) {
+
+        const businessText = card.textContent.toLowerCase();
+
+        const businessCategory = card.dataset.category;
+
+        const matchesSearch = businessText.includes(searchTerm);
+
+        const matchesCategory =
+            selectedCategory === "all" ||
+            businessCategory === selectedCategory;
+
+        const isVisible = matchesSearch && matchesCategory;
+
+        card.style.display = isVisible ? "" : "none";
+
+        if (isVisible) {
+            resultsFound++;
+        }
+
+    });
+
+
+    // Display a message when no businesses match
+
+    let noResults = businessList.querySelector(".no-results");
+
+    if (resultsFound === 0) {
+
+        if (!noResults) {
+
+            noResults = document.createElement("p");
+
+            noResults.className = "no-results";
+
+            noResults.textContent =
+                "No businesses match your search or selected category.";
+
+            businessList.appendChild(noResults);
+
+        }
+
+    } else if (noResults) {
+
+        noResults.remove();
+
+    }
+
+}
+
+
+// Search while typing
+
+if (searchInput) {
+
+    searchInput.addEventListener("input", filterBusinesses);
+
+}
+
+
+// Filter when a category is selected
+
+if (categoryFilter) {
+
+    categoryFilter.addEventListener("change", filterBusinesses);
+
+}
+
+
+// Search button
+
+if (searchButton) {
+
+    searchButton.addEventListener("click", function (event) {
+
+        event.preventDefault();
+
+        filterBusinesses();
+
+    });
+
+}
+
+
+/* 3. CONTACT FORM DEMONSTRATION */
+
+const businessForm = document.querySelector("#businessForm");
+
+if (businessForm) {
+
+    businessForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        alert(
+            "Thank you for your interest in Kumul Business Hub PNG. " +
+            "This is currently a demonstration form. " +
+            "Your information has not been stored or sent."
+        );
+
+        businessForm.reset();
+
+    });
+
+}
+
+
+/* 4. INITIALISE BUSINESS DIRECTORY */
+
+filterBusinesses();
+
+
+/* =========================================================
+   END OF KUMUL BUSINESS HUB PNG SCRIPT
+   ========================================================= */
