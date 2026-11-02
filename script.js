@@ -1,136 +1,193 @@
+
 /* =========================================================
    KUMUL BUSINESS HUB PNG
-   Website JavaScript
+   Main Website JavaScript
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* ---------- MOBILE MENU ---------- */
+    /* -----------------------------------------------------
+       1. MOBILE NAVIGATION
+    ----------------------------------------------------- */
 
-    const menuToggle = document.querySelector(".menu-toggle");
-    const navMenu = document.querySelector(".nav-menu");
+    const menuButton = document.querySelector(".menu-btn");
+    const mainNav = document.querySelector("#mainNav");
 
-    if (menuToggle && navMenu) {
-        menuToggle.addEventListener("click", function () {
-            navMenu.classList.toggle("active");
+    if (menuButton && mainNav) {
 
-            const isOpen = navMenu.classList.contains("active");
+        menuButton.addEventListener("click", function () {
 
-            menuToggle.setAttribute("aria-expanded", isOpen);
-            menuToggle.textContent = isOpen ? "✕" : "☰";
+            const isOpen = mainNav.classList.toggle("active");
+
+            menuButton.setAttribute("aria-expanded", isOpen);
+            menuButton.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation menu" : "Open navigation menu"
+            );
+
+            menuButton.textContent = isOpen ? "✕" : "☰";
+
         });
 
-        /* Close menu after clicking a navigation link */
+        // Close the menu after selecting a navigation link.
+        mainNav.querySelectorAll("a").forEach(function (link) {
 
-        const navLinks = navMenu.querySelectorAll("a");
-
-        navLinks.forEach(function (link) {
             link.addEventListener("click", function () {
-                navMenu.classList.remove("active");
-                menuToggle.setAttribute("aria-expanded", "false");
-                menuToggle.textContent = "☰";
+
+                mainNav.classList.remove("active");
+
+                menuButton.setAttribute("aria-expanded", "false");
+                menuButton.setAttribute(
+                    "aria-label",
+                    "Open navigation menu"
+                );
+
+                menuButton.textContent = "☰";
+
             });
+
         });
+
     }
 
 
-    /* ---------- BUSINESS SEARCH ---------- */
+    /* -----------------------------------------------------
+       2. BUSINESS DIRECTORY SEARCH
+    ----------------------------------------------------- */
 
-    const searchInput = document.querySelector("#business-search");
-    const categorySelect = document.querySelector("#business-category");
-    const businessCards = document.querySelectorAll(".business-card");
+    const searchInput = document.querySelector("#searchInput");
+    const businessList = document.querySelector("#businessList");
+    const searchButton = document.querySelector(".search-box button");
 
-    function filterBusinesses() {
+    function searchBusinesses() {
 
-        if (!searchInput || !categorySelect || !businessCards.length) {
+        if (!searchInput || !businessList) {
             return;
         }
 
-        const searchTerm = searchInput.value.toLowerCase().trim();
-        const selectedCategory = categorySelect.value.toLowerCase();
+        const searchTerm = searchInput.value
+            .toLowerCase()
+            .trim();
+
+        const businessCards = businessList.querySelectorAll(
+            ".business-card"
+        );
+
+        let resultsFound = 0;
 
         businessCards.forEach(function (card) {
 
-            const cardText = card.textContent.toLowerCase();
-            const cardCategory =
-                card.getAttribute("data-category")?.toLowerCase() || "";
+            const businessDetails = card.textContent.toLowerCase();
 
-            const matchesSearch =
-                cardText.includes(searchTerm);
+            const matches = businessDetails.includes(searchTerm);
 
-            const matchesCategory =
-                selectedCategory === "" ||
-                cardCategory === selectedCategory;
+            card.style.display = matches ? "" : "none";
 
-            if (matchesSearch && matchesCategory) {
-                card.style.display = "";
-            } else {
-                card.style.display = "none";
+            if (matches) {
+                resultsFound++;
             }
+
         });
+
+        // Display a message when no businesses match.
+        let noResults = businessList.querySelector(".no-results");
+
+        if (resultsFound === 0) {
+
+            if (!noResults) {
+
+                noResults = document.createElement("p");
+
+                noResults.className = "no-results";
+
+                noResults.textContent =
+                    "No businesses found. Please try another search.";
+
+                businessList.appendChild(noResults);
+
+            }
+
+        } else if (noResults) {
+
+            noResults.remove();
+
+        }
+
     }
 
+    // Search automatically while typing.
     if (searchInput) {
-        searchInput.addEventListener("input", filterBusinesses);
+
+        searchInput.addEventListener("input", searchBusinesses);
+
     }
 
-    if (categorySelect) {
-        categorySelect.addEventListener("change", filterBusinesses);
+    // Search when the Search button is tapped.
+    if (searchButton) {
+
+        searchButton.addEventListener("click", searchBusinesses);
+
     }
 
 
-    /* ---------- CONTACT FORM ---------- */
+    /* -----------------------------------------------------
+       3. BUSINESS REGISTRATION FORM
+    ----------------------------------------------------- */
 
-    const contactForm = document.querySelector("#contact-form");
+    const businessForm = document.querySelector("#businessForm");
 
-    if (contactForm) {
+    if (businessForm) {
 
-        contactForm.addEventListener("submit", function (event) {
+        businessForm.addEventListener("submit", function (event) {
 
             event.preventDefault();
 
-            const name =
-                document.querySelector("#name")?.value.trim();
+            const formData = new FormData(businessForm);
 
-            const email =
-                document.querySelector("#email")?.value.trim();
+            const businessName = formData.get("businessName")
+                ?.toString()
+                .trim();
 
-            const message =
-                document.querySelector("#message")?.value.trim();
+            const email = formData.get("email")
+                ?.toString()
+                .trim();
 
-            if (!name || !email || !message) {
-                alert("Please complete all required fields.");
+            if (!businessName || !email) {
+
+                alert("Please enter your business name and email address.");
+
                 return;
+
             }
 
             alert(
-                "Thank you, " +
-                name +
-                "! Your message has been received."
+                "Thank you for submitting " +
+                businessName +
+                ". This is a demonstration form. Your details have not yet been sent or saved."
             );
 
-            contactForm.reset();
+            businessForm.reset();
+
         });
+
     }
 
 
-    /* ---------- SMOOTH SCROLL ---------- */
+    /* -----------------------------------------------------
+       4. SMOOTH PAGE NAVIGATION
+    ----------------------------------------------------- */
 
-    const pageLinks = document.querySelectorAll('a[href^="#"]');
-
-    pageLinks.forEach(function (link) {
+    document.querySelectorAll('a[href^="#"]').forEach(function (link) {
 
         link.addEventListener("click", function (event) {
 
-            const targetId =
-                this.getAttribute("href");
+            const targetId = this.getAttribute("href");
 
             if (!targetId || targetId === "#") {
                 return;
             }
 
-            const target =
-                document.querySelector(targetId);
+            const target = document.querySelector(targetId);
 
             if (target) {
 
@@ -140,45 +197,18 @@ document.addEventListener("DOMContentLoaded", function () {
                     behavior: "smooth",
                     block: "start"
                 });
+
             }
+
         });
+
     });
 
 
-    /* ---------- CURRENT YEAR ---------- */
+    /* -----------------------------------------------------
+       5. WEBSITE INITIALIZATION
+    ----------------------------------------------------- */
 
-    const yearElement =
-        document.querySelector("#current-year");
-
-    if (yearElement) {
-        yearElement.textContent =
-            new Date().getFullYear();
-    }
-
-
-    /* ---------- BACK TO TOP ---------- */
-
-    const backToTop =
-        document.querySelector("#back-to-top");
-
-    if (backToTop) {
-
-        window.addEventListener("scroll", function () {
-
-            if (window.scrollY > 500) {
-                backToTop.classList.add("show");
-            } else {
-                backToTop.classList.remove("show");
-            }
-        });
-
-        backToTop.addEventListener("click", function () {
-
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        });
-    }
+    console.log("Kumul Business Hub PNG website initialized.");
 
 });
