@@ -2,7 +2,7 @@
 /* =========================================================
    KUMUL BUSINESS HUB PNG
    CORPORATE WEBSITE DESIGN SYSTEM
-   Version 2.0
+   Version 2.1
    ========================================================= */
 
 /* 1. DESIGN TOKENS */
@@ -314,11 +314,13 @@ section {
     background: var(--background);
 }
 
+/* Search */
+
 .search-box {
     max-width: 800px;
     display: flex;
     gap: 12px;
-    margin: 0 auto 35px;
+    margin: 0 auto 25px;
     padding: 15px;
     background: var(--white);
     border: 1px solid var(--border);
@@ -353,13 +355,49 @@ section {
     background: var(--green-dark);
 }
 
+/* Category filter */
+
+.category-filter {
+    max-width: 800px;
+    margin: 0 auto 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.category-filter label {
+    color: var(--navy);
+    font-size: 0.92rem;
+    font-weight: 700;
+}
+
+.category-filter select {
+    width: 100%;
+    padding: 13px 14px;
+    background: var(--white);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    outline: none;
+    cursor: pointer;
+}
+
+.category-filter select:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(8,122,67,0.1);
+}
+
+/* Business cards */
+
 .business-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
+    align-items: start;
 }
 
 .business-card {
+    min-width: 0;
     background: var(--white);
     padding: 27px;
     border: 1px solid var(--border);
@@ -371,6 +409,7 @@ section {
 .business-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow);
+    border-color: rgba(214,167,44,0.65);
 }
 
 .business-card h3 {
@@ -401,11 +440,63 @@ section {
     color: var(--white);
 }
 
+/* Expandable business profiles */
+
+.business-profile {
+    margin-top: 18px;
+    border-top: 1px solid var(--border);
+    padding-top: 14px;
+}
+
+.business-profile summary {
+    color: var(--green);
+    font-weight: 700;
+    font-size: 0.93rem;
+    cursor: pointer;
+    list-style-position: inside;
+}
+
+.business-profile summary:hover {
+    color: var(--green-dark);
+}
+
+.business-profile[open] summary {
+    margin-bottom: 15px;
+}
+
+.profile-content {
+    padding: 15px;
+    background: #f5f7fa;
+    border-left: 3px solid var(--gold);
+    border-radius: 5px;
+}
+
+.profile-content h4 {
+    color: var(--navy);
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.profile-content p {
+    color: var(--muted);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.profile-content strong {
+    color: var(--navy);
+}
+
+/* No search results */
+
 .no-results {
     grid-column: 1 / -1;
     text-align: center;
     padding: 25px;
     color: var(--muted);
+    background: var(--white);
+    border: 1px dashed var(--border);
+    border-radius: var(--radius);
 }
 
 /* 9. ABOUT */
@@ -538,7 +629,9 @@ footer .copyright {
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
-textarea:focus-visible {
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible {
     outline: 3px solid var(--gold);
     outline-offset: 3px;
 }
@@ -695,6 +788,6 @@ textarea:focus-visible {
     *::after {
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
     }
-   }
-   
+}
