@@ -1,8 +1,9 @@
 
 /* =========================================================
-   KUMUL BUSINESS HUB PNG
+   MORO DIGITAL
    CORPORATE WEBSITE DESIGN SYSTEM
-   Version 2.1
+   Version 3.0
+   CONNECT • INNOVATE • GROW
    ========================================================= */
 
 /* 1. DESIGN TOKENS */
@@ -21,7 +22,7 @@
     --muted: #64748b;
     --border: #e2e8f0;
 
-    --radius: 12px;
+    --radius: 14px;
     --shadow: 0 8px 28px rgba(16, 42, 67, 0.08);
     --transition: 0.25s ease;
 }
@@ -138,7 +139,7 @@ section {
     color: var(--navy);
 }
 
-/* 5. HEADER */
+/* 5. HEADER AND NAVIGATION */
 
 .header {
     position: sticky;
@@ -162,14 +163,9 @@ section {
     align-items: center;
     gap: 12px;
     color: var(--navy);
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 800;
-}
-
-.logo img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
+    letter-spacing: 0.3px;
 }
 
 #mainNav {
@@ -198,17 +194,17 @@ section {
     padding: 5px;
 }
 
-/* 6. HERO */
+/* 6. HERO SECTION */
 
 .hero {
-    min-height: 580px;
+    min-height: 590px;
     display: flex;
     align-items: center;
     color: var(--white);
     background:
         radial-gradient(
             circle at 85% 20%,
-            rgba(214,167,44,0.18),
+            rgba(214,167,44,0.20),
             transparent 35%
         ),
         linear-gradient(
@@ -216,6 +212,8 @@ section {
             var(--navy-dark),
             var(--green-dark)
         );
+    position: relative;
+    overflow: hidden;
 }
 
 .hero-content {
@@ -224,7 +222,7 @@ section {
 }
 
 .hero-text {
-    max-width: 760px;
+    max-width: 780px;
 }
 
 .tagline {
@@ -236,7 +234,7 @@ section {
 }
 
 .hero h1 {
-    font-size: clamp(2.4rem, 6vw, 4.4rem);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
     line-height: 1.12;
     font-weight: 900;
     margin-bottom: 22px;
@@ -260,7 +258,7 @@ section {
     gap: 14px;
 }
 
-/* 7. FEATURES */
+/* 7. DIGITAL SOLUTIONS */
 
 .features {
     background: var(--white);
@@ -308,13 +306,11 @@ section {
     font-size: 0.94rem;
 }
 
-/* 8. BUSINESS DIRECTORY */
+/* 8. TECHNOLOGY MARKETPLACE */
 
 .directory {
     background: var(--background);
 }
-
-/* Search */
 
 .search-box {
     max-width: 800px;
@@ -355,8 +351,6 @@ section {
     background: var(--green-dark);
 }
 
-/* Category filter */
-
 .category-filter {
     max-width: 800px;
     margin: 0 auto 35px;
@@ -387,13 +381,13 @@ section {
     box-shadow: 0 0 0 3px rgba(8,122,67,0.1);
 }
 
-/* Business cards */
+/* Marketplace product cards */
 
 .business-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
-    align-items: start;
+    align-items: stretch;
 }
 
 .business-card {
@@ -440,54 +434,9 @@ section {
     color: var(--white);
 }
 
-/* Expandable business profiles */
-
-.business-profile {
-    margin-top: 18px;
-    border-top: 1px solid var(--border);
-    padding-top: 14px;
+.business-card[hidden] {
+    display: none !important;
 }
-
-.business-profile summary {
-    color: var(--green);
-    font-weight: 700;
-    font-size: 0.93rem;
-    cursor: pointer;
-    list-style-position: inside;
-}
-
-.business-profile summary:hover {
-    color: var(--green-dark);
-}
-
-.business-profile[open] summary {
-    margin-bottom: 15px;
-}
-
-.profile-content {
-    padding: 15px;
-    background: #f5f7fa;
-    border-left: 3px solid var(--gold);
-    border-radius: 5px;
-}
-
-.profile-content h4 {
-    color: var(--navy);
-    margin-bottom: 10px;
-    font-size: 1rem;
-}
-
-.profile-content p {
-    color: var(--muted);
-    font-size: 0.9rem;
-    margin-bottom: 8px;
-}
-
-.profile-content strong {
-    color: var(--navy);
-}
-
-/* No search results */
 
 .no-results {
     grid-column: 1 / -1;
@@ -499,7 +448,7 @@ section {
     border-radius: var(--radius);
 }
 
-/* 9. ABOUT */
+/* 9. ABOUT MORO DIGITAL */
 
 .about {
     background: #edf4f0;
@@ -547,38 +496,17 @@ section {
     background: var(--white);
 }
 
-#businessForm {
-    width: min(650px, 100%);
-    margin: 0 auto;
-    padding: 30px;
-    background: var(--background);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
+.contact p {
+    color: var(--muted);
 }
 
-#businessForm input,
-#businessForm textarea {
-    width: 100%;
-    display: block;
-    padding: 14px;
-    margin-bottom: 17px;
-    border: 1px solid #cbd5e1;
-    border-radius: 7px;
-    background: var(--white);
-    outline: none;
+.contact a {
+    color: var(--green);
+    font-weight: 700;
 }
 
-#businessForm input:focus,
-#businessForm textarea:focus {
-    border-color: var(--green);
-}
-
-#businessForm textarea {
-    resize: vertical;
-}
-
-#businessForm button {
-    width: 100%;
+.contact a:hover {
+    color: var(--green-dark);
 }
 
 /* 12. FOOTER */
@@ -630,8 +558,7 @@ a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
-select:focus-visible,
-summary:focus-visible {
+select:focus-visible {
     outline: 3px solid var(--gold);
     outline-offset: 3px;
 }
@@ -670,12 +597,7 @@ summary:focus-visible {
     }
 
     .logo {
-        font-size: 0.95rem;
-    }
-
-    .logo img {
-        width: 42px;
-        height: 42px;
+        font-size: 1rem;
     }
 
     .menu-btn {
@@ -748,10 +670,6 @@ summary:focus-visible {
         width: 100%;
     }
 
-    #businessForm {
-        padding: 20px;
-    }
-
     .footer-links {
         gap: 15px;
     }
@@ -766,12 +684,7 @@ summary:focus-visible {
     }
 
     .logo {
-        font-size: 0.82rem;
-    }
-
-    .logo img {
-        width: 36px;
-        height: 36px;
+        font-size: 0.9rem;
     }
 
     .hero h1 {
