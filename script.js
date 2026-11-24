@@ -265,3 +265,36 @@ filterProducts();
 /* =========================================================
    END OF MORO DIGITAL SCRIPT
    ========================================================= */
+
+// MORO DIGITAL - WHATSAPP CUSTOMER ENQUIRY FORM
+
+const enquiryForm = document.querySelector("#serviceEnquiryForm");
+
+if (enquiryForm) {
+    enquiryForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        const name = document.querySelector("#customerName").value.trim();
+        const phone = document.querySelector("#customerPhone").value.trim();
+        const service = document.querySelector("#serviceType").value;
+        const message = document.querySelector("#enquiryMessage").value.trim();
+
+        if (!name || !phone || !service || !message) {
+            alert("Please complete all enquiry fields.");
+            return;
+        }
+
+        const whatsappMessage =
+            "MORO DIGITAL - CUSTOMER ENQUIRY\n\n" +
+            "Name: " + name + "\n" +
+            "Phone: " + phone + "\n" +
+            "Service Required: " + service + "\n\n" +
+            "Enquiry Details:\n" + message;
+
+        const whatsappURL =
+            "https://wa.me/67578336234?text=" +
+            encodeURIComponent(whatsappMessage);
+
+        window.open(whatsappURL, "_blank", "noopener,noreferrer");
+    });
+}
