@@ -1,8 +1,9 @@
 
 /* =========================================================
-   KUMUL BUSINESS HUB PNG
+   MORO DIGITAL
    WEBSITE FUNCTIONALITY
-   Version 2.1
+   Version 3.0
+   CONNECT • INNOVATE • GROW
    ========================================================= */
 
 
@@ -11,16 +12,40 @@
 const menuButton = document.querySelector(".menu-btn");
 const mainNav = document.querySelector("#mainNav");
 
+function closeMenu() {
+
+    if (!menuButton || !mainNav) return;
+
+    mainNav.classList.remove("active");
+
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute(
+        "aria-label",
+        "Open navigation menu"
+    );
+
+    menuButton.textContent = "☰";
+}
+
 if (menuButton && mainNav) {
+
+    menuButton.setAttribute("aria-expanded", "false");
+    menuButton.setAttribute("aria-label", "Open navigation menu");
 
     menuButton.addEventListener("click", function () {
 
         const isOpen = mainNav.classList.toggle("active");
 
-        menuButton.setAttribute("aria-expanded", String(isOpen));
+        menuButton.setAttribute(
+            "aria-expanded",
+            String(isOpen)
+        );
+
         menuButton.setAttribute(
             "aria-label",
-            isOpen ? "Close navigation menu" : "Open navigation menu"
+            isOpen
+                ? "Close navigation menu"
+                : "Open navigation menu"
         );
 
         menuButton.textContent = isOpen ? "×" : "☰";
@@ -31,23 +56,37 @@ if (menuButton && mainNav) {
 
     mainNav.querySelectorAll("a").forEach(function (link) {
 
-        link.addEventListener("click", function () {
+        link.addEventListener("click", closeMenu);
 
-            mainNav.classList.remove("active");
+    });
 
-            menuButton.setAttribute("aria-expanded", "false");
-            menuButton.setAttribute("aria-label", "Open navigation menu");
+    // Close menu when clicking outside
 
-            menuButton.textContent = "☰";
+    document.addEventListener("click", function (event) {
 
-        });
+        const clickedInsideMenu = mainNav.contains(event.target);
+        const clickedMenuButton = menuButton.contains(event.target);
+
+        if (!clickedInsideMenu && !clickedMenuButton) {
+            closeMenu();
+        }
+
+    });
+
+    // Close menu using Escape key
+
+    document.addEventListener("keydown", function (event) {
+
+        if (event.key === "Escape") {
+            closeMenu();
+        }
 
     });
 
 }
 
 
-/* 2. BUSINESS DIRECTORY SEARCH AND CATEGORY FILTER */
+/* 2. TECHNOLOGY MARKETPLACE SEARCH */
 
 const searchInput = document.querySelector("#searchInput");
 const categoryFilter = document.querySelector("#categoryFilter");
@@ -55,11 +94,9 @@ const businessList = document.querySelector("#businessList");
 const searchButton = document.querySelector(".search-box button");
 
 
-function filterBusinesses() {
+function filterProducts() {
 
-    if (!businessList) {
-        return;
-    }
+    if (!businessList) return;
 
     const searchTerm = searchInput
         ? searchInput.value.toLowerCase().trim()
@@ -69,25 +106,27 @@ function filterBusinesses() {
         ? categoryFilter.value
         : "all";
 
-    const businessCards = businessList.querySelectorAll(".business-card");
+    const productCards = businessList.querySelectorAll(
+        ".business-card"
+    );
 
     let resultsFound = 0;
 
-    businessCards.forEach(function (card) {
+    productCards.forEach(function (card) {
 
-        const businessText = card.textContent.toLowerCase();
+        const productText = card.textContent.toLowerCase();
 
-        const businessCategory = card.dataset.category;
+        const productCategory = card.dataset.category || "";
 
-        const matchesSearch = businessText.includes(searchTerm);
+        const matchesSearch = productText.includes(searchTerm);
 
         const matchesCategory =
             selectedCategory === "all" ||
-            businessCategory === selectedCategory;
+            productCategory === selectedCategory;
 
         const isVisible = matchesSearch && matchesCategory;
 
-        card.style.display = isVisible ? "" : "none";
+        card.hidden = !isVisible;
 
         if (isVisible) {
             resultsFound++;
@@ -96,7 +135,7 @@ function filterBusinesses() {
     });
 
 
-    // Display a message when no businesses match
+    // Show or remove the no-results message
 
     let noResults = businessList.querySelector(".no-results");
 
@@ -109,7 +148,7 @@ function filterBusinesses() {
             noResults.className = "no-results";
 
             noResults.textContent =
-                "No businesses match your search or selected category.";
+                "No products found. Try another search or category.";
 
             businessList.appendChild(noResults);
 
@@ -124,20 +163,26 @@ function filterBusinesses() {
 }
 
 
-// Search while typing
+// Search automatically while typing
 
 if (searchInput) {
 
-    searchInput.addEventListener("input", filterBusinesses);
+    searchInput.addEventListener(
+        "input",
+        filterProducts
+    );
 
 }
 
 
-// Filter when a category is selected
+// Filter products when category changes
 
 if (categoryFilter) {
 
-    categoryFilter.addEventListener("change", filterBusinesses);
+    categoryFilter.addEventListener(
+        "change",
+        filterProducts
+    );
 
 }
 
@@ -150,41 +195,73 @@ if (searchButton) {
 
         event.preventDefault();
 
-        filterBusinesses();
+        filterProducts();
 
     });
 
 }
 
 
-/* 3. CONTACT FORM DEMONSTRATION */
+// Allow Enter key to run a search
 
-const businessForm = document.querySelector("#businessForm");
+if (searchInput) {
 
-if (businessForm) {
+    searchInput.addEventListener("keydown", function (event) {
 
-    businessForm.addEventListener("submit", function (event) {
+        if (event.key === "Enter") {
 
-        event.preventDefault();
+            event.preventDefault();
 
-        alert(
-            "Thank you for your interest in Kumul Business Hub PNG. " +
-            "This is currently a demonstration form. " +
-            "Your information has not been stored or sent."
-        );
+            filterProducts();
 
-        businessForm.reset();
+        }
 
     });
 
 }
 
 
-/* 4. INITIALISE BUSINESS DIRECTORY */
+/* 3. MARKETPLACE WHATSAPP ENQUIRIES */
 
-filterBusinesses();
+document.querySelectorAll(".business-card button").forEach(
+    function (button) {
+
+        button.addEventListener("click", function () {
+
+            const productCard = button.closest(".business-card");
+
+            if (!productCard) return;
+
+            const productName =
+                productCard.querySelector("h3")?.textContent.trim()
+                || "a product";
+
+            const message =
+                "Hello Moro Digital, I am interested in " +
+                productName +
+                ". Please provide more information about availability and pricing.";
+
+            const whatsappURL =
+                "https://wa.me/67578336234?text=" +
+                encodeURIComponent(message);
+
+            window.open(
+                whatsappURL,
+                "_blank",
+                "noopener,noreferrer"
+            );
+
+        });
+
+    }
+);
+
+
+/* 4. INITIALISE MARKETPLACE */
+
+filterProducts();
 
 
 /* =========================================================
-   END OF KUMUL BUSINESS HUB PNG SCRIPT
+   END OF MORO DIGITAL SCRIPT
    ========================================================= */
