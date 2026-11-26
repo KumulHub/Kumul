@@ -1,774 +1,322 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Moro Digital | IT Services & ICT Solutions</title>
-
-    <meta name="description" content="Moro Digital provides IT services, computer repairs, networking, data management, digital solutions and technology consultancy in Papua New Guinea.">
-
-    <meta name="author" content="Sakias Moro">
-    <meta name="theme-color" content="#102a43">
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#081629">
+  <meta name="description" content="Moro Digital | Technology, data management, IT solutions, AI, cybersecurity and digital innovation in Papua New Guinea.">
+  <title>Moro Digital | Technology • Data • Innovation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- HEADER -->
-
 <header class="header">
-    <div class="container nav">
+  <div class="container nav-wrap">
+    <a class="brand" href="#home">
+      <span class="brand-icon">M<span>.</span></span>
+      <span class="brand-text">
+        <strong>MORO DIGITAL</strong>
+        <small>TECHNOLOGY • DATA • INNOVATION</small>
+      </span>
+    </a>
 
-        <a href="#home" class="logo">
-            <span>MORO DIGITAL</span>
-        </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
 
-        <nav id="mainNav">
-            <a href="#home">Home</a>
-            <a href="#services">IT Services</a>
-            <a href="#networking">Networking</a>
-            <a href="#data">Data Services</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
-
-        <button class="menu-btn" type="button"
-            aria-label="Open navigation menu"
-            aria-expanded="false">
-            ☰
-        </button>
-
-    </div>
+    <nav class="navigation" id="navigation">
+      <a href="#home">Home</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-button">Contact us ↗</a>
+    </nav>
+  </div>
 </header>
 
-
 <main>
-
-<!-- HERO SECTION -->
-
-<section id="home" class="hero">
-    <div class="container hero-content">
-
-        <div class="hero-text">
-
-            <p class="tagline">CONNECT • INNOVATE • GROW</p>
-
-            <h1>
-                Technology Solutions.
-                <span>Building Digital Possibilities.</span>
-            </h1>
-
-            <p>
-                Moro Digital provides practical IT services,
-                digital solutions and technology support
-                for individuals, businesses and organisations
-                across Papua New Guinea.
-            </p>
-
-            <div class="hero-buttons">
-                <a href="#services" class="btn primary">
-                    Explore Our Services
-                </a>
-
-                <a href="#contact" class="btn secondary">
-                    Contact Us
-                </a>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-
-<!-- INTRODUCTION -->
-
-<section class="features">
-    <div class="container">
-
-        <div class="section-title">
-            <p>OUR BUSINESS</p>
-
-            <h2>IT Services, ICT Solutions & Digital Infrastructure</h2>
-
-            <span>
-                Supporting businesses and organisations
-                through reliable technology services,
-                technical support and digital innovation.
-            </span>
-        </div>
-
-    </div>
-</section>
-
-
-<!-- IT SERVICES -->
-
-<section id="services" class="features">
-    <div class="container">
-
-        <div class="section-title">
-            <p>WHAT WE DO</p>
-            <h2>IT Services & Technical Support</h2>
-
-            <span>
-                Practical IT services to help maintain,
-                repair and improve your technology systems.
-            </span>
-        </div>
-
-        <div class="feature-grid">
-
-            <article class="feature-card">
-                <img src="images/computer-repair.jpg"
-                     alt="Computer repair services"
-                     class="service-image">
-
-                <h3>Computer Repair & Maintenance</h3>
-
-                <p>
-                    Desktop and laptop diagnostics,
-                    hardware troubleshooting, computer
-                    upgrades and preventive maintenance.
-                </p>
-            </article>
-
-
-            <article class="feature-card">
-                <img src="images/it-support.jpg"
-                     alt="IT technical support"
-                     class="service-image">
-
-                <h3>IT Technical Support</h3>
-
-                <p>
-                    Computer setup, software installation,
-                    operating system configuration,
-                    troubleshooting and technical assistance.
-                </p>
-            </article>
-
-
-            <article class="feature-card">
-                <img src="images/hardware-maintenance.jpg"
-                     alt="IT equipment maintenance"
-                     class="service-image">
-
-                <h3>IT Equipment Maintenance</h3>
-
-                <p>
-                    Printer installation, peripheral setup,
-                    equipment diagnostics and routine
-                    maintenance of business technology.
-                </p>
-            </article>
-
-
-            <article class="feature-card">
-                <div class="icon">🔧</div>
-
-                <h3>Hardware Installation & Upgrades</h3>
-
-                <p>
-                    Computer hardware installation,
-                    memory and storage upgrades,
-                    equipment configuration and setup.
-                </p>
-            </article>
-
-        </div>
-    </div>
-</section>
-
-
-<!-- NETWORKING -->
-
-<section id="networking" class="directory">
-    <div class="container">
-
-        <div class="section-title">
-            <p>NETWORKING & CONNECTIVITY</p>
-
-            <h2>Connecting Systems & Businesses</h2>
-
-            <span>
-                Networking solutions designed to help
-                businesses establish reliable connectivity
-                and communication.
-            </span>
-        </div>
-
-        <div class="feature-grid">
-
-            <article class="feature-card">
-                <img src="images/network-installation.jpg"
-                     alt="Network installation"
-                     class="service-image">
-
-                <h3>Network Installation</h3>
-
-                <p>
-                    Small-business network installation,
-                    LAN setup, network configuration
-                    and connectivity solutions.
-                </p>
-            </article>
-
-
-            <article class="feature-card">
-                <img src="images/wifi-setup.jpg"
-                     alt="Wi-Fi and router configuration"
-                     class="service-image">
-
-                <h3>Wi-Fi & Router Configuration</h3>
-
-                <p>
-                    Wireless network installation,
-                    router configuration, Wi-Fi optimisation
-                    and connectivity troubleshooting.
-                </p>
-            </article>
-
-
-            <article class="feature-card">
-                <div class="icon">🔌</div>
-
-                <h3>Structured Cabling</h3>
-
-                <p>
-                    Basic network cabling, equipment
-                    connections, network points
-                    and infrastructure setup.
-                </p>
-            </article>
-
-
-            <article class="feature-card">
-                <img src="images/network-maintenance.jpg"
-                     alt="Network maintenance services"
-                     class="service-image">
-
-                <h3>Network Maintenance</h3>
-
-                <p>
-                    Network diagnostics, connectivity
-                    troubleshooting, configuration checks
-                    and routine network maintenance.
-                </p>
-            </article>
-
-        </div>
-    </div>
-</section>
-
-
-<!-- DIGITAL SOLUTIONS -->
-
-<section id="digital-solutions" class="features">
-    <div class="container">
-
-        <div class="section-title">
-            <p>DIGITAL TRANSFORMATION</p>
-
-            <h2>Digital Solutions & Consultancy</h2>
-
-            <span>
-                Helping individuals and organisations
-                improve their operations through technology.
-            </span>
-        </div>
-
-        <div class="feature-grid">
-
-            <article class="feature-card">
-                <img src="images/digital-solutions.jpg"
-                     alt="Digital transformation solutions"
-                     class="service-image">
-
-                <h3>Digital Transformation</h3>
-
-                <p>
-                    Supporting businesses to transition
-                    from manual processes to practical
-                    digital systems and tools.
-                </p>
-            </article>
-
-
-            <article class="feature-card">
-                <div class="icon">📋</div>
-
-                <h3>Business Process Digitisation</h3>
-
-                <p>
-                    Digital record keeping, inventory
-                    management, operational documentation
-                    and business process improvement.
-                </p>
-            </article>
-
-
-            <article class="feature-card">
-                <div class="icon">☁️</div>
-
-                <h3>Cloud Technology Solutions</h3>
-
-                <p>
-                    Technology guidance, cloud service
-                    adoption, digital storage solutions
-                    and cloud-based business tools.
-                </p>
-            </article>
-
-
-            <article class="feature-card">
-                <div class="icon">🤝</div>
-
-                <h3>Technology Consultancy</h3>
-
-                <p>
-                    Technology assessments, IT planning,
-                    digital strategy, technology sourcing
-                    and advisory services.
-                </p>
-            </article>
-
-        </div>
-    </div>
-</section>
-
-
-<!-- DATA SERVICES -->
-
-<section id="data" class="directory">
-    <div class="container">
-
-        <div class="section-title">
-            <p>DATA & INFORMATION MANAGEMENT</p>
-
-            <h2>Turning Data Into Useful Information</h2>
-
-            <span>
-                Supporting organisations with data
-                collection, organisation, processing
-                and information management.
-            </span>
-        </div>
-
-        <div class="feature-grid">
-
-            <article class="feature-card">
-                <div class="icon">📊</div>
-
-                <h3>Data Collection & Harvesting</h3>
-
-                <p>
-                    Structured data collection,
-                    digital surveys, information gathering
-                    and data acquisition using authorised methods.
-                </p>
-            </article>
-
-
-            <article class="feature-card">
-                <img src="images/data-management.jpg"
-                     alt="Data management services"
-                     class="service-image">
-
-                <h3>Data Management</h3>
-
-                <p>
-                    Data organisation, digital records,
-                    information storage, database
-                    organisation and data administration.
-                </p>
-            </article>
-
-
-            <article class="feature-card">
-                <div class="icon">📈</div>
-
-                <h3>Data Processing & Reporting</h3>
-
-                <p>
-                    Data cleaning, spreadsheet management,
-                    basic data analysis, reporting
-                    and information presentation.
-                </p>
-            </article>
-
-
-            <article class="feature-card">
-                <div class="icon">🔐</div>
-
-                <h3>Digital Records Management</h3>
-
-                <p>
-                    Digital documentation, records
-                    organisation, data backup planning
-                    and responsible information handling.
-                </p>
-            </article>
-
-        </div>
-    </div>
-</section>
-
-
-<!-- INFRASTRUCTURE -->
-
-<section id="infrastructure" class="features">
-    <div class="container">
-
-        <div class="section-title">
-            <p>FUTURE TECHNOLOGY</p>
-
-            <h2>Technical Infrastructure Solutions</h2>
-
-            <span>
-                Building technical capabilities and
-                partnerships to support Papua New Guinea's
-                growing digital infrastructure.
-            </span>
-        </div>
-
-        <div class="feature-grid">
-
-            <article class="feature-card">
-                <div class="icon">🏢</div>
-
-                <h3>IT Infrastructure Support</h3>
-
-                <p>
-                    Technical infrastructure planning,
-                    equipment deployment coordination
-                    and IT systems support.
-                </p>
-            </article>
-
-
-            <article class="feature-card">
-                <div class="icon">☁️</div>
-
-                <h3>Cloud & Data Infrastructure</h3>
-
-                <p>
-                    Developing knowledge and partnerships
-                    in cloud computing, data storage
-                    and enterprise technology.
-                </p>
-            </article>
-
-
-            <article class="feature-card">
-                <div class="icon">🔗</div>
-
-                <h3>Technology Integration</h3>
-
-                <p>
-                    Supporting the adoption and integration
-                    of digital systems through appropriate
-                    technical partnerships.
-                </p>
-            </article>
-
-
-            <article class="feature-card">
-                <div class="icon">🌏</div>
-
-                <h3>Digital Infrastructure Partnerships</h3>
-
-                <p>
-                    Exploring opportunities to contribute
-                    to technology projects and ICT development
-                    across Papua New Guinea.
-                </p>
-            </article>
-
-        </div>
-    </div>
-</section>
-
-
-<!-- FUTURE EXPANSION -->
-
-<section class="about">
-    <div class="container about-content">
-
-        <div>
-            <p class="tagline">OUR FUTURE DIRECTION</p>
-
-            <h2>
-                Growing Into a Complete
-                Technology Solutions Provider.
-            </h2>
-        </div>
-
-        <div>
-            <p>
-                Moro Digital is building its foundation
-                in IT services, networking, data management
-                and digital consultancy.
-            </p>
-
-            <p>
-                Our future development plans include
-                technology procurement, computer and
-                networking equipment supply, electronics
-                distribution and enterprise ICT solutions.
-            </p>
-
-            <p>
-                We aim to develop the technical capacity
-                and business partnerships required to
-                participate in larger digital infrastructure
-                projects in Papua New Guinea.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-
-<!-- ABOUT -->
-
-<section id="about" class="about">
-    <div class="container about-content">
-
-        <div>
-            <p class="tagline">ABOUT MORO DIGITAL</p>
-
-            <h2>
-                Connecting People,
-                Businesses & Technology.
-            </h2>
-        </div>
-
-        <div>
-            <p>
-                Moro Digital is a Papua New Guinean
-                information technology and digital
-                solutions business founded by Sakias Moro.
-            </p>
-
-            <p>
-                We focus on IT technical services,
-                computer hardware maintenance, networking,
-                data management, digital solutions
-                and technology consultancy.
-            </p>
-
-            <p>
-                Our mission is to make practical
-                technology services more accessible
-                while supporting businesses and
-                organisations in their digital development.
-            </p>
-
-            <p>
-                Our long-term vision is to become
-                a recognised Papua New Guinean ICT
-                services and digital infrastructure company.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-
-<!-- CALL TO ACTION -->
-
-<section class="cta">
-    <div class="container">
-
-        <h2>Let's Connect Through Technology.</h2>
-
-        <p>
-            Need IT support, computer maintenance,
-            networking, data services or technology advice?
-            Contact Moro Digital to discuss your requirements.
+  <section class="hero" id="home">
+    <div class="hero-glow"></div>
+    <div class="container hero-layout">
+      <div class="hero-content">
+        <div class="eyebrow"><span class="live-dot"></span> DIGITAL DEVELOPMENT & INNOVATION</div>
+        <h1>Empowering ideas through <span>digital innovation.</span></h1>
+        <p class="hero-description">
+          Technology, data and intelligent solutions designed to help businesses
+          and organisations move forward in a connected world.
         </p>
+        <div class="hero-actions">
+          <a href="#solutions" class="btn btn-gold">Explore our solutions <span>↗</span></a>
+          <a href="#about" class="btn btn-outline">Discover Moro Digital</a>
+        </div>
+        <div class="hero-caption">
+          <span class="caption-line"></span>
+          CONNECT <b>•</b> INNOVATE <b>•</b> GROW
+        </div>
+      </div>
 
-        <a href="#contact" class="btn primary">
-            Get In Touch
-        </a>
-
+      <div class="hero-graphic">
+        <div class="graphic-circle circle-one"></div>
+        <div class="graphic-circle circle-two"></div>
+        <div class="graphic-circle circle-three"></div>
+        <div class="graphic-core">
+          <span>M<span class="gold">.</span></span>
+          <small>INTELLIGENCE<br>IN MOTION</small>
+        </div>
+        <div class="graphic-node node-one"><span>01</span> DATA</div>
+        <div class="graphic-node node-two"><span>02</span> AI SYSTEMS</div>
+        <div class="graphic-node node-three"><span>03</span> CLOUD</div>
+      </div>
     </div>
-</section>
+    <div class="container hero-footer">
+      <span>INDEPENDENT TECHNOLOGY INITIATIVE</span>
+      <span>PAPUA NEW GUINEA <b>↗</b></span>
+    </div>
+  </section>
 
+  <section class="intro-strip">
+    <div class="container intro-inner">
+      <span>OUR FOCUS</span>
+      <span>Technology</span>
+      <span>Data intelligence</span>
+      <span>Artificial intelligence</span>
+      <span>Digital infrastructure</span>
+    </div>
+  </section>
 
-<!-- CONTACT -->
-
-<section id="contact" class="contact">
+  <section class="section" id="solutions">
     <div class="container">
-
-        <div class="section-title">
-            <p>GET IN TOUCH</p>
-
-            <h2>Connect With Moro Digital</h2>
-
-            <span>
-                Tell us about your technology needs.
-                We welcome enquiries from individuals,
-                businesses and organisations.
-            </span>
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow dark">OUR DIGITAL ECOSYSTEM</div>
+          <h2>Technology with a <span>clear purpose.</span></h2>
         </div>
+        <p>
+          We bring together practical IT capabilities and emerging digital
+          technologies to create opportunities for growth and innovation.
+        </p>
+      </div>
 
-        <div class="enquiry-layout">
-
-            <div class="contact-details">
-
-                <h3>Business Information</h3>
-
-                <p><strong>Business:</strong> Moro Digital</p>
-
-                <p><strong>Founder:</strong> Sakias Moro</p>
-
-                <p><strong>Industry:</strong> IT Services & Digital Solutions</p>
-
-                <p><strong>Location:</strong> Papua New Guinea</p>
-
-                <p>
-                    <strong>Phone / WhatsApp:</strong>
-                    <a href="https://wa.me/67578336234"
-                       target="_blank"
-                       rel="noopener">
-                        +675 78336234
-                    </a>
-                </p>
-
-                <p>
-                    <strong>Email:</strong>
-                    <a href="mailto:laiamsakiasmoro@gmail.com">
-                        laiamsakiasmoro@gmail.com
-                    </a>
-                </p>
-
-                <a href="https://wa.me/67578336234"
-                   target="_blank"
-                   rel="noopener"
-                   class="btn primary">
-                    Chat on WhatsApp
-                </a>
-
-            </div>
-
-
-            <!-- ENQUIRY FORM -->
-
-            <div class="enquiry-form-container">
-
-                <h3>Submit a Service Enquiry</h3>
-
-                <form id="serviceEnquiryForm">
-
-                    <label for="customerName">Your Name</label>
-
-                    <input type="text"
-                           id="customerName"
-                           name="customerName"
-                           placeholder="Enter your full name"
-                           required>
-
-
-                    <label for="customerPhone">Phone Number</label>
-
-                    <input type="tel"
-                           id="customerPhone"
-                           name="customerPhone"
-                           placeholder="Enter your phone number"
-                           required>
-
-
-                    <label for="serviceType">Service Required</label>
-
-                    <select id="serviceType"
-                            name="serviceType"
-                            required>
-
-                        <option value="">Select a service</option>
-
-                        <option>Computer Repair</option>
-                        <option>Hardware Maintenance</option>
-                        <option>IT Technical Support</option>
-                        <option>Networking & Connectivity</option>
-                        <option>Wi-Fi & Router Configuration</option>
-                        <option>Data Collection & Harvesting</option>
-                        <option>Data Management</option>
-                        <option>Digital Solutions</option>
-                        <option>Technology Consultancy</option>
-                        <option>IT Infrastructure Support</option>
-                        <option>Other Enquiry</option>
-
-                    </select>
-
-
-                    <label for="enquiryMessage">
-                        Describe Your Requirements
-                    </label>
-
-                    <textarea id="enquiryMessage"
-                              name="enquiryMessage"
-                              rows="5"
-                              placeholder="Tell us what you need..."
-                              required></textarea>
-
-
-                    <button type="submit" class="btn primary">
-                        Send Enquiry via WhatsApp
-                    </button>
-
-                    <p class="form-note">
-                        Your enquiry will open in WhatsApp.
-                        Review the message and press Send.
-                    </p>
-
-                </form>
-
-            </div>
-
-        </div>
+      <div class="solution-grid">
+        <article class="solution-card featured">
+          <div class="card-top"><span>01 / TECHNOLOGY</span><span class="card-symbol">⌘</span></div>
+          <h3>IT solutions</h3>
+          <p>Technical support, computer maintenance, hardware services and networking solutions.</p>
+          <a href="#services">Discover more <span>↗</span></a>
+        </article>
+        <article class="solution-card">
+          <div class="card-top"><span>02 / INFORMATION</span><span class="card-symbol">▤</span></div>
+          <h3>Data management</h3>
+          <p>Data collection, processing, organisation and reporting for better information management.</p>
+          <a href="#data">Discover more <span>↗</span></a>
+        </article>
+        <article class="solution-card">
+          <div class="card-top"><span>03 / INTELLIGENCE</span><span class="card-symbol">✳</span></div>
+          <h3>AI & automation</h3>
+          <p>Responsible artificial intelligence, intelligent agents and streamlined digital workflows.</p>
+          <a href="#ai">Discover more <span>↗</span></a>
+        </article>
+      </div>
     </div>
-</section>
+  </section>
 
+  <section class="section services-section" id="services">
+    <div class="container">
+      <div class="center-heading">
+        <div class="eyebrow">WHAT WE DO</div>
+        <h2>Our technology <span>capabilities.</span></h2>
+        <p>Practical services and future-focused digital capabilities under one platform.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card">
+          <div class="service-icon">⌘</div>
+          <h3>IT support & maintenance</h3>
+          <p>Computer troubleshooting, hardware maintenance, software setup and technical support.</p>
+          <span class="service-index">01</span>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">⌁</div>
+          <h3>Networking</h3>
+          <p>Network configuration, connectivity support, infrastructure planning and maintenance.</p>
+          <span class="service-index">02</span>
+        </article>
+        <article class="service-card" id="data">
+          <div class="service-icon">▤</div>
+          <h3>Data management</h3>
+          <p>Data collection, digitisation, processing, quality control and information systems.</p>
+          <span class="service-index">03</span>
+        </article>
+        <article class="service-card" id="ai">
+          <div class="service-icon">✳</div>
+          <h3>AI & automation</h3>
+          <p>AI-assisted services, intelligent agents and automation for operational workflows.</p>
+          <span class="service-index">04</span>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">◇</div>
+          <h3>Cybersecurity</h3>
+          <p>Defensive security practices, security awareness, access controls and safer systems.</p>
+          <span class="service-index">05</span>
+        </article>
+        <article class="service-card">
+          <div class="service-icon">☁</div>
+          <h3>Cloud infrastructure</h3>
+          <p>Cloud readiness, storage planning, backup strategies and infrastructure support.</p>
+          <span class="service-index">06</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="data-feature">
+    <div class="container feature-layout">
+      <div class="feature-copy">
+        <div class="eyebrow">DATA • INTELLIGENCE • INSIGHT</div>
+        <h2>Turn raw data into <span>meaningful information.</span></h2>
+        <p>
+          Data is a valuable resource. Our direction is to help organisations
+          collect, structure, manage and understand information through
+          reliable digital processes.
+        </p>
+        <a href="#contact" class="btn btn-gold">Discuss a data project ↗</a>
+      </div>
+      <div class="data-panel">
+        <div class="panel-heading"><span class="panel-dot"></span> INFORMATION WORKFLOW <span>LIVE CONCEPT</span></div>
+        <div class="workflow-step"><b>01</b><span>Raw data collection</span><i>→</i></div>
+        <div class="workflow-step"><b>02</b><span>Validation & processing</span><i>→</i></div>
+        <div class="workflow-step"><b>03</b><span>Structured information</span><i>→</i></div>
+        <div class="workflow-step final-step"><b>04</b><span>Insights & reporting</span><i>✓</i></div>
+        <div class="panel-footer">QUALITY <span>•</span> PRIVACY <span>•</span> SECURITY</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section infrastructure-section">
+    <div class="container infrastructure-layout">
+      <div>
+        <div class="eyebrow dark">PNG'S DIGITAL FUTURE</div>
+        <h2>Contributing to a more <span>connected Papua New Guinea.</span></h2>
+      </div>
+      <div class="infrastructure-copy">
+        <p>
+          We believe digital development requires capable people, dependable
+          technology, secure information and responsible innovation.
+          Moro Digital aims to contribute through practical services and
+          technology solutions.
+        </p>
+        <p>
+          Our long-term direction includes cloud-ready systems and
+          interoperability with approved digital infrastructure, subject
+          to technical requirements and proper authorisation.
+        </p>
+        <div class="notice">
+          <strong>Our position</strong>
+          <span>Moro Digital is an independent private-sector initiative. It does not claim government ownership, endorsement or partnership.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section trust-section">
+    <div class="container trust-layout">
+      <div class="trust-copy">
+        <div class="eyebrow dark">RESPONSIBLE TECHNOLOGY</div>
+        <h2>Innovation built on <span>trust.</span></h2>
+        <p>Our approach places people, privacy, security and accountability at the centre of digital development.</p>
+      </div>
+      <div class="trust-grid">
+        <div><b>01</b><h3>Privacy</h3><p>Respect personal information and responsible data handling.</p></div>
+        <div><b>02</b><h3>Human oversight</h3><p>People remain accountable for important decisions.</p></div>
+        <div><b>03</b><h3>Security</h3><p>Defensive security and authorised access practices.</p></div>
+        <div><b>04</b><h3>Transparency</h3><p>Clear communication about capabilities and limitations.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about-section" id="about">
+    <div class="container about-layout">
+      <div class="about-mark">
+        <div class="about-monogram">M<span>.</span></div>
+        <p>CONNECT • INNOVATE • GROW</p>
+      </div>
+      <div class="about-content">
+        <div class="eyebrow">ABOUT MORO DIGITAL</div>
+        <h2>A vision for <span>digital development.</span></h2>
+        <p>
+          Moro Digital is a Papua New Guinea-focused technology initiative
+          founded by Sakias Moro. Its focus is technology, data management,
+          IT services and emerging digital capabilities.
+        </p>
+        <p>
+          We aim to connect ideas with practical solutions, build technical
+          capability and explore opportunities that support a smarter digital future.
+        </p>
+        <div class="founder"><span>FOUNDER</span><strong>Sakias Moro</strong></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section" id="contact">
+    <div class="container contact-layout">
+      <div class="contact-info">
+        <div class="eyebrow">LET'S BUILD SOMETHING</div>
+        <h2>Let's discuss your next digital project.</h2>
+        <p>Contact Moro Digital to discuss IT support, data projects, technology services or digital innovation.</p>
+        <div class="contact-detail"><span>EMAIL</span><a href="mailto:laiamsakiasmoro@gmail.com">laiamsakiasmoro@gmail.com</a></div>
+        <div class="contact-detail"><span>PHONE / WHATSAPP</span><a href="https://wa.me/67578336234" target="_blank" rel="noopener">+675 7833 6234</a></div>
+        <div class="contact-detail"><span>LOCATION</span><strong>Port Moresby, Papua New Guinea</strong></div>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <h3>Send an enquiry</h3>
+        <p>Tell us what you are working on.</p>
+        <label for="name">Full name</label>
+        <input id="name" name="name" type="text" placeholder="Your name" required>
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" placeholder="Your email" required>
+        <label for="service">Area of interest</label>
+        <select id="service" name="service" required>
+          <option value="">Choose a service</option>
+          <option>IT support & maintenance</option>
+          <option>Networking</option>
+          <option>Data management</option>
+          <option>AI & automation</option>
+          <option>Cybersecurity</option>
+          <option>Cloud infrastructure</option>
+          <option>Technology marketplace</option>
+          <option>Other enquiry</option>
+        </select>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" placeholder="Describe your enquiry..." required></textarea>
+        <button type="submit" class="btn btn-gold submit-btn">Prepare email enquiry ↗</button>
+        <small class="form-note">This form opens your email application. It does not yet save enquiries to a database.</small>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </form>
+    </div>
+  </section>
 </main>
 
-
-<!-- FOOTER -->
-
-<footer>
-    <div class="container">
-
-        <h3>MORO DIGITAL</h3>
-
-        <p>CONNECT • INNOVATE • GROW</p>
-
-        <p>IT Services. ICT Solutions. Digital Infrastructure.</p>
-
-        <div class="footer-links">
-
-            <a href="#home">Home</a>
-            <a href="#services">IT Services</a>
-            <a href="#networking">Networking</a>
-            <a href="#data">Data Services</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-
-        </div>
-
-        <p class="copyright">
-            © 2027 Moro Digital. All rights reserved.
-        </p>
-
-        <p>Founded by Sakias Moro</p>
-
-    </div>
+<footer class="footer">
+  <div class="container footer-top">
+    <a class="brand footer-brand" href="#home">
+      <span class="brand-icon">M<span>.</span></span>
+      <span class="brand-text"><strong>MORO DIGITAL</strong><small>TECHNOLOGY • DATA • INNOVATION</small></span>
+    </a>
+    <p>Empowering PNG through digital technology, data management, IT solutions and innovation.</p>
+    <a href="#home" class="back-top">BACK TO TOP ↑</a>
+  </div>
+  <div class="container footer-bottom">
+    <span>© <span id="currentYear"></span> Moro Digital. All rights reserved.</span>
+    <span>CONNECT • INNOVATE • GROW</span>
+    <span>Port Moresby, PNG</span>
+  </div>
 </footer>
 
-
 <script src="script.js"></script>
-
 </body>
 </html>
